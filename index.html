@@ -1,17 +1,243 @@
 <!DOCTYPE html>
-    <html lang="ar">
-</head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width initial-scale=1.0">
-<title>اهلا بيك</title>
-</head>
-<body>
-<h1 align="center">اهلا بيك</h1>
-<h2 align="center">دوس ع <strong>الصورة</strong></h2>
-<a href="main.html">
-    <img src="images (1).jpeg">
-</a>
-</body>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>EL DA3LOB</title>
 
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&display=swap" rel="stylesheet">
 
-</html>
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+}
+
+body{
+overflow:hidden;
+background:#050816;
+height:100vh;
+}
+
+/* الخلفية */
+
+.stars{
+position:absolute;
+width:100%;
+height:100%;
+background:url("https://i.ibb.co/WgQZ5wP/stars.png");
+animation:moveStars 120s linear infinite;
+z-index:1;
+opacity:.8;
+}
+
+@keyframes moveStars{
+from{
+transform:translateY(0);
+}
+to{
+transform:translateY(-2000px);
+}
+}
+
+.glow{
+position:absolute;
+width:600px;
+height:600px;
+background:radial-gradient(circle,#00ffff55,transparent 70%);
+filter:blur(50px);
+top:-200px;
+left:-150px;
+animation:float 8s ease-in-out infinite;
+z-index:2;
+}
+
+.glow2{
+position:absolute;
+width:500px;
+height:500px;
+background:radial-gradient(circle,#ff00ff44,transparent 70%);
+bottom:-150px;
+right:-100px;
+filter:blur(50px);
+animation:float2 10s ease-in-out infinite;
+z-index:2;
+}
+
+@keyframes float{
+0%,100%{
+transform:translateY(0px);
+}
+50%{
+transform:translateY(40px);
+}
+}
+
+@keyframes float2{
+0%,100%{
+transform:translateY(0px);
+}
+50%{
+transform:translateY(-40px);
+}
+}
+
+/* المحتوى */
+
+.hero{
+position:relative;
+z-index:5;
+height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+flex-direction:column;
+text-align:center;
+padding:20px;
+color:white;
+}
+
+/* اللوجو */
+
+.logo{
+font-size:90px;
+font-weight:800;
+background:linear-gradient(90deg,#00ffff,#ff00ff,#ffffff);
+background-size:300%;
+-webkit-background-clip:text;
+-webkit-text-fill-color:transparent;
+animation:shine 5s linear infinite;
+letter-spacing:5px;
+text-shadow:0 0 40px #00ffff88;
+}
+
+@keyframes shine{
+0%{
+background-position:0%;
+}
+100%{
+background-position:300%;
+}
+}
+
+/* الكلام */
+
+.hero p{
+margin-top:20px;
+font-size:22px;
+max-width:700px;
+line-height:1.7;
+color:#d8d8d8;
+animation:fadeUp 1.5s ease;
+}
+
+/* الزر */
+
+.btn{
+margin-top:40px;
+padding:18px 45px;
+border:none;
+border-radius:50px;
+font-size:18px;
+font-weight:600;
+cursor:pointer;
+background:linear-gradient(135deg,#00ffff,#ff00ff);
+color:white;
+box-shadow:
+0 0 20px #00ffff88,
+0 0 60px #ff00ff55;
+transition:.4s;
+position:relative;
+overflow:hidden;
+}
+
+.btn:hover{
+transform:scale(1.08);
+box-shadow:
+0 0 40px #00ffff,
+0 0 80px #ff00ff;
+}
+
+.btn::before{
+content:"";
+position:absolute;
+top:0;
+left:-100%;
+width:100%;
+height:100%;
+background:rgba(255,255,255,.2);
+transform:skewX(-30deg);
+transition:.6s;
+}
+
+.btn:hover::before{
+left:120%;
+}
+
+/* الأنيميشن */
+
+@keyframes fadeUp{
+from{
+opacity:0;
+transform:translateY(50px);
+}
+to{
+opacity:1;
+transform:translateY(0);
+}
+}
+
+/* خطوط متحركة */
+
+.lines{
+position:absolute;
+width:100%;
+height:100%;
+overflow:hidden;
+z-index:1;
+}
+
+.lines span{
+position:absolute;
+display:block;
+width:2px;
+height:200px;
+background:linear-gradient(transparent,#00ffff);
+animation:fall 5s linear infinite;
+opacity:.5;
+}
+
+.lines span:nth-child(1){
+left:10%;
+animation-delay:0s;
+}
+
+.lines span:nth-child(2){
+left:30%;
+animation-delay:1s;
+}
+
+.lines span:nth-child(3){
+left:50%;
+animation-delay:2s;
+}
+
+.lines span:nth-child(4){
+left:70%;
+animation-delay:3s;
+}
+
+.lines span:nth-child(5){
+left:90%;
+animation-delay:4s;
+}
+
+@keyframes fall{
+0%{
+top:-200px;
+}
+100%{
+top:1
